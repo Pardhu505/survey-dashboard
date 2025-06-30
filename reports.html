@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Existing Survey Reports</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Existing Survey Reports</h1>
+        {% if files %}
+            <ul>
+                {% for file in files %}
+                    <li><a href="{{ url_for('serve_report', filename=file) }}">{{ file }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No survey reports found in the '{{ upload_folder }}' directory.</p>
+            <p>You can add your report files to this directory, and they will appear here.</p>
+        {% endif %}
+        <br>
+        <a href="{{ url_for('index') }}" class="button">Back to Home</a>
+    </div>
+</body>
+</html>
