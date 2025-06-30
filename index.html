@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Dashboard Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Survey Dashboard Portal</h1>
+        <p>Manage your survey analysis reports and create new surveys with ease.</p>
+        <div class="actions">
+            <a href="{{ url_for('list_reports') }}" class="button">View Existing Survey Reports</a>
+            <a href="{{ url_for('new_survey_form') }}" class="button">Create New Survey</a>
+        </div>
+    </div>
+</body>
+</html>
